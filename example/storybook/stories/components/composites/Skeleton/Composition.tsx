@@ -24,21 +24,28 @@ function CompositionComponent() {
             }}
           />
         </Skeleton.Circle>
-
-        <Skeleton.Text
-          isLoaded={loaded}
-          w="50%"
-          ml={2}
-          _stack={{ justifyContent: 'center' }}
-        >
-          <Text fontWeight="bold" fontSize="lg" my="auto" ml={2}>
-            Nativebase
-          </Text>
-        </Skeleton.Text>
+        <VStack w="100%" h="50%">
+          <Skeleton.Text
+            isLoaded={loaded}
+            w="65%"
+            ml={2}
+            _stack={{ justifyContent: 'center' }}
+          >
+            <Text fontWeight="bold" fontSize="lg" my="auto" ml={2}>
+              Nativebase
+            </Text>
+          </Skeleton.Text>
+          <Skeleton.Text isLoaded={loaded} w="25%" ml={2}>
+            <Text fontWeight="bold" fontSize="lg" my="auto" ml={2}>
+              Nativebase
+            </Text>
+          </Skeleton.Text>
+        </VStack>
       </HStack>
-      <Box size={200} mt={1}>
-        <Skeleton height="100%" isLoaded={loaded}>
+      <Box size={300} mt={1}>
+        <Skeleton height="60%" isLoaded={loaded} borderRadius={12}>
           <Image
+            borderRadius={12}
             source={{
               uri: 'https://www.w3schools.com/css/img_lights.jpg',
             }}

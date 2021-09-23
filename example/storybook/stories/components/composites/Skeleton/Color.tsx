@@ -1,62 +1,50 @@
 import React from 'react';
-import { Skeleton, HStack, VStack } from 'native-base';
+import { Skeleton, Stack } from 'native-base';
 
 export const Example = () => {
   return (
-    <HStack
-      _web={{ space: 8 }}
-      _android={{ space: 6 }}
-      _ios={{ space: 6 }}
-      alignItems="center"
-    >
-      <Skeleton
-        borderRadius={20}
-        startColor="cyan.300"
-        endColor="purple.200"
-        size="170"
-      ></Skeleton>
-      <VStack
-        space={5}
-        _web={{ w: 250, h: 170 }}
-        _android={{ size: 170 }}
-        _ios={{ size: 170 }}
+    <>
+      <Stack
+        direction={{ base: 'column', md: 'row' }}
+        space={6}
+        alignItems="center"
+        justifyContent="center"
+        w={{ base: '100%', md: '50%' }}
+        h="100%"
       >
         <Skeleton
-          borderRadius={20}
-          startColor="gray.400"
-          endColor="gray.700"
-          h="6"
-          w="75%"
-        ></Skeleton>
-        <Skeleton.Text
-          w="100%"
-          noOfLines={3}
-          lineHeight={3}
-          space={3}
-          startColor="gray.100"
-          endColor="gray.300"
-          h={60}
-          borderRadius={20}
-        ></Skeleton.Text>
-        <HStack w="80%" ml="auto">
-          <Skeleton
-            ml="auto"
+          borderRadius={4}
+          startColor="cyan.200"
+          endColor="emerald.200"
+          h={{ base: '40%', md: '25%' }}
+          w={{ base: '80%', md: '25%' }}
+        />
+        <Stack
+          w={{ base: '100%', md: '50%' }}
+          alignItems={{ base: 'center', md: 'flex-start' }}
+          space={{ base: 6, md: 8 }}
+          direction={{ base: 'column', md: 'column' }}
+        >
+          <Skeleton.Text
+            w={{ base: '80%', md: '80%' }}
+            noOfLines={3}
+            mt={4}
+            lineHeight={4}
+            space={3}
             startColor="gray.100"
-            endColor="gray.300"
-            borderRadius={10}
-            h={8}
-            w="45%"
-          ></Skeleton>
+            endColor="gray.200"
+            h={74}
+            borderRadius={20}
+          />
           <Skeleton
-            ml="auto"
-            borderRadius={10}
-            startColor="green.300"
-            endColor="green.700"
-            h={8}
-            w="45%"
-          ></Skeleton>
-        </HStack>
-      </VStack>
-    </HStack>
+            borderRadius={4}
+            startColor="indigo.100"
+            endColor="indigo.200"
+            h="10"
+            w={{ base: '80%', md: '80%' }}
+          />
+        </Stack>
+      </Stack>
+    </>
   );
 };
